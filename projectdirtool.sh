@@ -32,5 +32,4 @@ then
         echo "no subdirectories created"
 fi
 
-echo "opening your project folder"
-cd ~/Documents/$projectname/
+echo "Your project directory has been created"
