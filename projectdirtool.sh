@@ -14,7 +14,7 @@ cd $projectname
 echo "would you like to create any subdirectories? (y/n)"
 read answer
 
-if [ $answer -eq "y" ]
+if [ $answer = "y" ]
 then
     echo "how many subdirectories?"
     read numberoffolders
@@ -28,7 +28,9 @@ then
         mkdir $foldername
         ((defaultfoldernumber++)) 
     done
-# integrate git into this as well
+    else
+        echo "no subdirectories created"
+fi
 
-
-
+echo "opening your project folder"
+cd ~/Documents/$projectname/
