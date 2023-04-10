@@ -6,8 +6,8 @@ cd ~/Documents
 echo "Project name:"
 read projectname
 
-mkdir $projectname
 echo "creating $projectname dir"
+mkdir $projectname
 
 cd $projectname
 
@@ -17,10 +17,17 @@ read answer
 if [ $answer -eq "y" ]
 then
     echo "how many subdirectories?"
-    read num
-    for i in $(seq 1 $num)
-    mkdir sub$1
-
+    read numberoffolders
+    
+    defaultfoldernumber=1
+    while [ $defaultfoldernumber -le $numberoffolders ]
+    do
+        echo "creating folder $defaultfoldernumber"
+        echo "What name would you like to give folder $defaultfoldernumber?"
+        read foldername
+        mkdir $foldername
+        ((defaultfoldernumber++)) 
+    done
 # integrate git into this as well
 
 
